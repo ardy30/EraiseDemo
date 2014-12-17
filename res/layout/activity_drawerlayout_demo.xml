@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <!-- drawer可以实现简单的SlidingMenu效果，切记设置滑动控件的 layout_gravity
+    	 滑动的控件声明要在不滑动控件之后 -->
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dl_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <fragment class="com.eraise.eraisedemo.fragment.DrawerDemoFragment1"
+            android:id="@+id/fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:dividerHeight="3dp"
+            android:divider="#999"
+            android:background="#FFF"
+            />
+        <ListView
+            android:id="@+id/listview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:dividerHeight="3dp"
+            android:divider="#999"
+            android:background="#FFF"
+            />
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>

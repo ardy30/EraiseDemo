@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- updatePeriodMillis在SDK1.5以后就失效了 -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="72dp"
+    android:minHeight="36dp"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/activity_widget"
+    android:configure="com.eraise.eraisedemo.activity.WidgetConfigure"
+    />

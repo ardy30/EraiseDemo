@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configs>
+    <!-- 
+    	设置 demo 节点， name 属性设置类名， title 属性设置显示名
+    	例如
+    	<demo name="com.eraise.eraisedemo.TestActivity" title="测试Activity" />
+     -->
+     <demo name="com.eraise.eraisedemo.bluetooth.activity.BluetoothDemo" title="蓝牙" />
+     <demo name="com.eraise.eraisedemo.activity.GridViewDemo" title="表格布局" />
+     <demo name="com.eraise.eraisedemo.activity.SwitchDemo" title="ListView中的Switch控件(4.0)" />
+     <demo name="com.eraise.eraisedemo.activity.ActivityDialogDemo" title="Activity作为Dialog" />
+     <demo name="com.eraise.eraisedemo.activity.ListItemDeleteDemo" title="仿微信删除列表项" />
+     <demo name="com.eraise.eraisedemo.activity.DrawerLayoutDemo" title="DrawerLayout侧滑" />
+     <demo name="com.eraise.eraisedemo.activity.SuspendButtonDemo" title="悬浮按钮" />
+     <demo name="com.eraise.eraisedemo.activity.SensorDemo" title="传感器" />
+     <demo name="com.eraise.eraisedemo.activity.SendMessageDemo" title="发送和接收短信" />
+     <demo name="com.eraise.eraisedemo.activity.TTSDemo" title="文本转语音" />
+     <demo name="com.eraise.eraisedemo.activity.ImageSpanDemo" title="ImageSpan" />
+     <demo name="com.eraise.eraisedemo.activity.IflytekSTTDemo" title="讯飞语音转文本" />
+     <demo name="com.eraise.eraisedemo.activity.ViewPagerDemo" title="ViewPager滑动动画" />
+     <demo name="com.eraise.eraisedemo.activity.SwipeRefreshDemo" title="SwipeRefresh下拉刷新" />
+</Configs>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:layout_margin="50dp"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="2014年1月21日中国互联网出现重大灾难，今天必将写入互联网的史册。各大巨头网站被解析向65.49.2.178，事件发生于3点左右，6点15分，目前仍有部分网站未恢复"
+        android:textColor="#000"
+        />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GridViewDemo" >
+
+	<!-- 
+		listSelector 设置被选中时的背景色，当前为透明
+		descendantFocusability 设置点击事件的获取防止Button抢占点击事件
+	 -->
+    <GridView
+        android:id="@+id/gv_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:numColumns="2"
+        android:descendantFocusability="blocksDescendants"
+        android:listSelector="@android:color/transparent"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:fadingEdge="none"
+        />
+
+</RelativeLayout>
