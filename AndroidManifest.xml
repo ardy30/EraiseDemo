@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eraise.eraisedemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    
+    <!-- 悬浮窗需要权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <!-- 获取任务栈 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 发送短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 接收短信 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- 震动  -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 蓝牙 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 修改蓝牙可见状态直接修改了系统设置，需要权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name="EraiseDemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.eraise.eraisedemo.EraiseDemoActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.eraise.eraisedemo.activity.GridViewDemo"/>
+        <activity android:name="com.eraise.eraisedemo.activity.SwitchDemo"/>
+        <activity android:name="com.eraise.eraisedemo.activity.ActivityDialogDemo" android:theme="@style/Dialog" />
+        <activity android:name="com.eraise.eraisedemo.activity.ListItemDeleteDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.DrawerLayoutDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.SuspendButtonDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.SensorDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.SendMessageDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.TTSDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.ImageSpanDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.IflytekSTTDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.ViewPagerDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.SwipeRefreshDemo" />
+        <activity android:name="com.eraise.eraisedemo.activity.LoadAllAppDemo" />
+        <!-- 配置Widget的Activity需要设置Intent-Filter -->
+        <activity android:name="com.eraise.eraisedemo.activity.WidgetConfigure">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.eraise.eraisedemo.bluetooth.activity.BluetoothDemo" />
+        
+        <service android:name="com.eraise.eraisedemo.service.SuspendButtonService" />
+        <service android:name="com.eraise.eraisedemo.service.UpdateWidgetService" />
+        
+        <receiver android:name="com.eraise.eraisedemo.widget.WidgetDemo">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.AppWidgetManager.ACTION_APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.AppWidgetManager.ACTION_APPWIDGET_DISABLED" />
+                <action android:name="android.appwidget.AppWidgetManager.ACTION_APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.AppWidgetManager.ACTION_APPWIDGET_DELETED" />
+            </intent-filter>
+            <meta-data android:resource="@xml/demo_widget_provider" android:name="android.appwidget.provider"/>
+        </receiver>
+    </application>
+
+</manifest>
