@@ -5,6 +5,7 @@
     	例如
     	<demo name="com.eraise.eraisedemo.TestActivity" title="测试Activity" />
      -->
+     <demo name="com.eraise.eraisedemo.activity.LoadAllAppDemo" title="查看所有的程序" />
      <demo name="com.eraise.eraisedemo.bluetooth.activity.BluetoothDemo" title="蓝牙" />
      <demo name="com.eraise.eraisedemo.activity.GridViewDemo" title="表格布局" />
      <demo name="com.eraise.eraisedemo.activity.SwitchDemo" title="ListView中的Switch控件(4.0)" />
