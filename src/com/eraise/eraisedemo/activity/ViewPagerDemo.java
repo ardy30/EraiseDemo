@@ -22,6 +22,8 @@ public class ViewPagerDemo extends FragmentActivity{
 	 * 页面指示器
 	 */
 	protected PagerTabStrip pagerTabStrip;
+	
+	protected FragmentAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +34,22 @@ public class ViewPagerDemo extends FragmentActivity{
 		/* 整个屏幕的下划线，跟个分割线似的 */
 		pagerTabStrip.setDrawFullUnderline(false);
 		vp = (ViewPager) findViewById(R.id.vp);
-		vp.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
-		vp.setCurrentItem(100000);
+		mAdapter = new FragmentAdapter(getSupportFragmentManager());
+		vp.setAdapter(mAdapter);
+		vp.setCurrentItem(1);
 		vp.setPageTransformer(true, new ViewPager.PageTransformer() {
 			
 			@Override
 			public void transformPage(View v, float position) {
-			    
+			    // 当有为position为0的时候，即为动画已经结束了，判断当前是否需要循环头尾页
+				int currentItem = vp.getCurrentItem();
+				if (position == 0) {
+					if (currentItem == 0) {
+						vp.setCurrentItem(mAdapter.getCount() - 2, false);
+					} else if (currentItem == (mAdapter.getCount() - 1)) {
+						vp.setCurrentItem(1, false);
+					}
+				}
 				/* 覆盖 */
 				if (position < 0 && position > -1) {
 					v.setTranslationX(1 + position);
@@ -87,7 +98,7 @@ public class ViewPagerDemo extends FragmentActivity{
 			
 			fragments = new LinkedList<Fragment>();
 			tabs = new LinkedList<String>();
-			for (int i = 0; i < 3; i ++) {
+			for (int i = 0; i < 6; i ++) {
 				fragments.add(new PageFragment());
 				tabs.add("页面" + i);
 			}
@@ -100,12 +111,24 @@ public class ViewPagerDemo extends FragmentActivity{
 		public CharSequence getPageTitle(int position)
 		{
 //		    return "页面" + position;
-		    return tabs.get(position % fragments.size());
+		    return tabs.get(getRealIndex(position));
+		}
+		
+		private int getRealIndex(int pos) {
+			int realIndex;
+			if (pos == 0) {
+				realIndex = fragments.size() - 1;
+			} else if (pos == fragments.size() + 1) {
+				realIndex = 0;
+			} else {
+				realIndex = pos - 1;
+			}
+			return realIndex;
 		}
 		
 		@Override
 		public Fragment getItem(int arg0) {
-			PageFragment pf = (PageFragment) fragments.get(arg0 % fragments.size());
+			PageFragment pf = (PageFragment) fragments.get(getRealIndex(arg0));
 			try {
 				return pf.clone();
 			} catch (CloneNotSupportedException e) {
@@ -116,7 +139,7 @@ public class ViewPagerDemo extends FragmentActivity{
 		
 		@Override
 		public int getCount() {
-			return Integer.MAX_VALUE;
+			return fragments.size() + 2;
 		}
 		
 	}
